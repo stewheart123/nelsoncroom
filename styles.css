@@ -1,0 +1,497 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+html {
+  font-size: 0.83vw;
+  font-size: 75%;
+  font-family: "Roboto", sans-serif;
+}
+body {
+  margin: 0;
+  background-color: #edf0f3;
+  overflow-x: hidden;
+}
+.burgerMenu,
+.menuClose {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 11px;
+  width: 33px;
+  height: 33px;
+}
+.burgerMenu:before {
+  content: url("assets/menu-alt-512.svg");
+  filter: invert(1);
+  background-size: contain;
+}
+.menuClose:before {
+  content: url("assets/img_260999.svg");
+  filter: invert(1);
+  background-size: contain;
+}
+.mobileMenu {
+  display: none;
+  background-color: #cccccc;
+  position: absolute;
+  width: 50%;
+  height: 160vh;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 1;
+  transition: 0.7s;
+  transform: translateX(200%);
+}
+.mobileMenu a,
+.mobileMenu div {
+  color: #000000;
+  font-size: 2rem;
+  text-decoration: none;
+  padding: 1rem;
+  margin: 0 auto;
+}
+div {
+  box-sizing: border-box;
+}
+a:hover,
+.button:hover,
+div.filter:hover {
+  cursor: pointer;
+  text-decoration: underline !important;
+}
+button:hover {
+  cursor: pointer;
+}
+h1 {
+  margin: 0;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.5em;
+  margin-top: 0em;
+}
+h2 {
+  color: #ffffff;
+  font-weight: 500;
+  margin-bottom: 0;
+  font-size: 0.6em;
+  line-height: 1.3em;
+  margin: 0.5em 0 0 0;
+}
+h3 {
+  margin: 0;
+  font-size: 1.5em;
+}
+.button {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 12px 20px;
+  margin: 15px 15px 15px 0px;
+  border-radius: 3px;
+  background-color: #00aeef;
+  display: inline-block;
+}
+.signUp.button {
+  background-color: #1c232e;
+  border: 2px solid #00aeef;
+  padding: 10px 16px;
+}
+button.tablinks {
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  padding: 0;
+  margin-right: 4%;
+  font-weight: 600;
+  height: 50%;
+  line-height: 2rem;
+}
+.selected,
+button.tablinks:hover {
+  border-bottom: 2px solid #00aeef !important;
+}
+button:focus {
+  outline: 0;
+}
+.logoAndSignUpContainer {
+  background-color: #1c232e;
+  height: 70px;
+}
+.logoAndSignUpContainer a {
+  float: right;
+}
+.logo {
+  background-image: url("assets/Group11.svg");
+  background-size: 99.99%;
+  max-width: 200px;
+  width: 200px;
+  float: left;
+  height: 45px;
+  background-repeat: no-repeat;
+  margin-top: 12.3px;
+  margin-left: 12.5px;
+}
+.heroHeader {
+  background-image: url("assets/AdobeStock_299034266.jpg");
+  width: 100%;
+  height: 0;
+  padding-bottom: 15%;
+  background-size: 147%;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 49.4%;
+
+  padding-bottom: 18%;
+  background-size: 167%;
+}
+.headingContainer {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 2.8% 18% 0 3%;
+  font-size: 2.5rem;
+}
+.filterBackground {
+  width: 100%;
+  background-color: #ffffff;
+}
+.courseFilter {
+  height: 60px;
+  background-color: #ffffff;
+  padding: 0 3%;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+.filterContainer {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.mainContentCentre {
+  width: 100%;
+  max-width: 1260px;
+  margin: 2% auto;
+  padding: 0 3%;
+  display: flex;
+}
+.listSpacer {
+  width: 75%;
+  width: 74.1%;
+  background-color: #ffffff;
+  display: inline-block;
+  float: left;
+}
+#courseList {
+  transition: 1s;
+  width: 100%;
+  background-color: #ffffff;
+  float: left;
+  overflow-y: scroll;
+  height: 150vh;
+  margin: 1rem 0;
+}
+.navigationPanel {
+  width: 22%;
+  width: 22.9%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  margin-left: 3%;
+  height: fit-content;
+}
+.navigationPanel a {
+  text-decoration: none;
+  color: #000000;
+  padding-left: 13%;
+  font-size: 1.2rem;
+  line-height: 2.6rem;
+  border-top: 1px solid #f0f0f0;
+}
+.navigationPanel a:nth-of-type(1) {
+  border-top: 0;
+}
+a.specialLink {
+  color: #00aeef;
+  border-top: 1px solid #00aeef;
+}
+.courseTile {
+  display: inline-block;
+  padding: 3%;
+  width: 100%;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin: 0.4em 0;
+}
+.tileInfo {
+  display: inline-block;
+  width: 74%;
+}
+.courseTile p {
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+}
+strong {
+  padding-right: 0.4rem;
+}
+.communication .subjectImage {
+  background-image: url("assets/AdobeStock_285511875.jpg");
+  background-position-x: 91%;
+  background-size: 191%;
+  background-position-y: 12%;
+}
+.technology .subjectImage {
+  background-image: url("assets/AdobeStock_300747258.jpg");
+  background-position-x: 1%;
+  background-size: 241%;
+  background-position-y: -2%;
+}
+.tax .subjectImage {
+  background-image: url("assets/AdobeStock_244178317.jpg");
+  background-size: 122%;
+}
+.subjectImage {
+  width: 23%;
+  padding-bottom: 17%;
+  float: left;
+  background-repeat: no-repeat;
+  margin-right: 3%;
+  position: relative;
+}
+.subjectTag.tax:before {
+  background-color: #ff31c1;
+  content: "TAX";
+  color: #ffffff;
+  position: absolute;
+  margin-bottom: 7%;
+  bottom: 0;
+  font-size: 0.95em;
+  padding: 0 0.5rem;
+}
+.subjectTag.communication:before {
+  background-color: #ef7c00;
+  content: "COMMUNICATION";
+  color: #ffffff;
+  position: absolute;
+  margin-bottom: 7%;
+  bottom: 0;
+  font-size: 0.95em;
+  padding: 0 0.5rem;
+}
+.subjectTag.technology:before {
+  background-color: #99c736;
+  content: "TECHNOLOGY";
+  color: #ffffff;
+  position: absolute;
+  margin-bottom: 7%;
+  bottom: 0;
+  font-size: 0.95em;
+  padding: 0 0.5rem;
+}
+.LoadMoreContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.button.loadMore {
+  color: #00aeef;
+  background-color: #ffffff;
+  border: 2px solid #00aeef;
+  margin: 1rem 0;
+}
+.hidden {
+  display: none;
+}
+footer {
+  background-color: #1c232e;
+  height: 100px;
+  padding: 5% 30px 18px;
+  box-sizing: border-box;
+  clear: both;
+}
+footer p {
+  display: inline-block;
+  font-size: 14px;
+  color: #ffffff;
+  margin: 0;
+}
+a.footerLink {
+  font-size: 14px;
+  color: #ffffff;
+  float: right;
+  text-decoration: none;
+  margin-right: 10px;
+  border-right: 1px solid white;
+  padding-right: 5px;
+}
+a.footerLink:nth-of-type(1) {
+  border: none;
+}
+.footerLinkContainer {
+  display: inline;
+}
+.filterContainer2 {
+  font-size: 1.6rem;
+  display: flex;
+  width: 71%;
+  float: left;
+  color: #554a4a;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.6rem 0;
+}
+.filter {
+  color: #00aeef;
+  padding: 0em 0em 0em 1em;
+}
+@media only screen and (max-width: 1024px) {
+  html {
+    font-size: 12px;
+  }
+  .headingContainer {
+    padding: 3%;
+  }
+  .heroHeader {
+    padding-bottom: 27%;
+    background-position-y: 49%;
+  }
+  .courseFilter {
+    padding: 0 3%;
+  }
+  .listSpacer {
+    width: 94%;
+    margin: 0 3%;
+    float: none;
+    position: relative;
+    top: 4px;
+  }
+  .navigationPanel {
+    width: 94%;
+    float: none;
+    clear: both;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2% 0;
+  }
+  .navigationPanel a {
+    padding-left: 3rem;
+    font-size: 1.2rem;
+    line-height: 2.6rem;
+    border-top: 0;
+  }
+  a.specialLink {
+    color: #00aeef;
+    font-weight: 600;
+    border-top: 0px solid #00aeef;
+  }
+  .mainContentCentre {
+    padding: 0;
+    display: block;
+  }
+  #courseList {
+    height: 50vh;
+  }
+  .filterContainer2 {
+    width: 97%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .noMob {
+    display: none;
+  }
+  .burgerMenu {
+    display: block;
+  }
+  /* .mobileMenu {
+    display: flex;
+  } */
+  .logo {
+    margin: auto;
+    float: unset;
+  }
+  .logoAndSignUpContainer {
+    padding-top: 12.5px;
+  }
+  .heroHeader {
+    padding-bottom: 44%;
+    background-size: 227%;
+    background-position-y: 63%;
+  }
+  .filterContainer {
+    justify-content: space-around;
+  }
+  .subjectImage {
+    width: 100%;
+    padding-bottom: 74%;
+  }
+  .tax .subjectImage {
+    background-size: 111%;
+  }
+  .tileInfo {
+    display: inline-block;
+    width: 100%;
+  }
+  .subjectTag.tax:before,
+  .subjectTag.technology:before,
+  .subjectTag.communication:before {
+    margin-top: 7%;
+    top: 0;
+    bottom: unset;
+  }
+  #courseList {
+    overflow-y: unset;
+    height: unset;
+  }
+  h3 {
+    margin: 1.6rem 0 0;
+  }
+  .listSpacer {
+    margin-bottom: 0;
+    min-height: 80vh;
+  }
+  .navigationPanel {
+    flex-direction: column;
+    padding: 0% 0;
+    position: relative;
+    top: -3px;
+  }
+  a.specialLink {
+    border-top: 1px solid #00aeef;
+  }
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  footer p {
+    margin: 1rem;
+  }
+  .filterContainer2 {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  .heroHeader {
+    padding-bottom: 71%;
+    background-size: 227%;
+    background-position-y: 104%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .h1 {
+    font-size: 0.7em;
+  }
+  .blue.button {
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 345px) {
+  html {
+    font-size: 11px;
+  }
+}

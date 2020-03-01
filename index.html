@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="course-ajax.js"></script>
+    <title>logoipsum - Developed by S.Tuckwood 2020</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logoAndSignUpContainer">
+        <div class="logo"></div>
+
+        <a href="">
+          <div class="blue signUp button noMob">Sign up</div>
+        </a>
+        <a href="">
+          <div class="login button noMob">Log in</div>
+        </a>
+      </div>
+      <!--logoAndSigninContainer -->
+      <div class="burgerMenu"></div>
+      <div class="menuClose "></div>
+      <div class="mobileMenu">
+        <a href="">
+          <div class="notOPC">Sign up</div>
+        </a>
+        <a href="">
+          <div class="notOPC">Log in</div>
+        </a>
+      </div>
+    </header>
+    <div class="heroHeader">
+      <div class="headingContainer">
+        <h1>Vestibulum pulvinar nisi orci&nbsp;vel</h1>
+        <h2>
+          Nam velit libero, ornare ac neque vitae, elementum
+          lobortis&nbsp;justo.<br />
+          Vestibulum non finibus&nbsp;dolor.
+        </h2>
+        <a href=""><div class="blue button">Call to action</div></a>
+      </div>
+    </div>
+    <!--heroHeader-->
+    <div class="filterBackground">
+      <div class="courseFilter">
+        <div class="filterContainer">
+          <button
+            class="tablinks selected"
+            onclick="getCourses('')"
+            data-course=""
+          >
+            All Courses
+          </button>
+          <button
+            class="tablinks"
+            onclick="getCourses('tax')"
+            data-course="tax"
+          >
+            Tax
+          </button>
+          <button
+            class="tablinks "
+            onclick="getCourses('communication')"
+            data-course="communication"
+          >
+            Communication
+          </button>
+          <button
+            class="tablinks"
+            onclick="getCourses('technology')"
+            data-course="technology"
+          >
+            Technology
+          </button>
+        </div>
+      </div>
+      <!--courseFilter-->
+    </div>
+    <!--=filterBackground-->
+
+    <div class="filterContainer2">
+      filter courses:
+      <div class="filter" onclick="filterCourses('title')">a - z</div>
+      <div class="filter" onclick="filterCourses('price')">price</div>
+    </div>
+
+    <div class="mainContentCentre">
+      <div class="listSpacer">
+        <div id="courseList">
+          <!--JASON DATA HERE-->
+        </div>
+      </div>
+      <!--courseList-->
+      <div class="navigationPanel">
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="">Navigation link</a>
+        <a href="" class="specialLink">Navigation link</a>
+      </div>
+      <!--navigationPanel-->
+
+    </div>
+    <!--mainContentCentre-->
+
+    <footer>
+      <p>produced by Company Name</p>
+      <div class="footerLinkContainer">
+        <a class="footerLink" href="">Privacy Policy</a>
+        <a class="footerLink" href="">FAQs</a>
+        <a class="footerLink" href="">Terms</a>
+      </div>
+
+      <script>
+        $(function() { // moves 'selected' class to clicked course filter 
+          $("#courseList").html("");
+          $(".tablinks").click(function() {
+            $(".tablinks").each(function() {
+              $(this).removeClass("selected");
+            });
+            $(this).addClass("selected");
+          });
+        });
+      </script>
+      <script>
+        $(".burgerMenu").click(function() { // shows mobile menu
+          $(".mobileMenu").css("display", "flex");
+          setTimeout(function() {
+            $(".burgerMenu").css("display", "none");
+            $(".menuClose").css("display", "block");
+            $(".mobileMenu").css("transform", "translateX(100%)");
+            $("body").css("overflow-y", "hidden");
+          }, 100);
+
+          $("div")
+            .not(
+              ".logoAndSignUpContainer, .logo, .signUp, .login, .burgerMenu, .menuClose, .mobileMenu, .notOPC"
+            )
+            .css("opacity", "0.1");
+        });
+
+        $(".menuClose").click(function() { // hides mobile menu
+          $(".burgerMenu").css("display", "block");
+          $(".menuClose").css("display", "none");
+          $(".mobileMenu").css("transform", "translateX(200%)");
+          $("body").css("overflow-y", "unset");
+          $("div")
+            .not(
+              ".logoAndSignUpContainer, .logo, .signUp, .login, .burgerMenu, .menuClose, .mobileMenu, .notOPC"
+            )
+            .css("opacity", "1");
+        });
+
+        $(window).resize(function() {// checks if screen width should exit mobile menu
+          var windowsize = $(window).width();
+          if (windowsize > 767) {
+            $(".menuClose").css("display", "none");
+            $(".burgerMenu").css("display", "none");
+          } else {
+            $(".burgerMenu").css("display", "flex");
+          }
+        });
+      </script>
+    </footer>
+  </body>
+</html>
+
+<!-- https://xd.adobe.com/view/e32b2883-a592-4385-4f5a-7fcefe945f8a-951a/ -->
+<!-- https://learn.accountingcpd.net/ACPD/API/Test/SampleObject -->
